@@ -1,0 +1,371 @@
+@import 'fonts';
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import 'bootstrap/scss/functions';
+// 2. Incluya cualquier anulación de variable predeterminada aquí
+@import 'variables';
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+// 4. Incluya cualquier anulación de mapa predeterminada aquí
+
+// 5. Include remainder of required parts
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import 'root';
+@import "bootstrap/scss/root";
+// 6. Optionally include any other parts as needed
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+@import "bootstrap/scss/card";
+// @import "bootstrap/scss/accordion";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "toastify-js/src/toastify.css";
+.toastify {
+  background-image: none !important;
+  &.bg-primary{
+	background-color: $blue !important;
+  }
+}
+@import "bootstrap/scss/modal";
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+// @import "bootstrap/scss/offcanvas";
+// @import "bootstrap/scss/placeholders";
+@import "bootstrap/scss/helpers";
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "bootstrap/scss/utilities/api";
+
+// Navbar
+
+.bg-primary {
+	.navbar-nav .show > .nav-link,
+	.navbar-nav .nav-link.active,
+	.navbar-nav .nav-link:hover,
+	.navbar-nav .nav-link:focus {
+	  color: $success !important;
+	}
+  }
+  
+  // Navs
+  
+  .nav-tabs {
+	.nav-link.active,
+	.nav-link.active:focus,
+	.nav-link.active:hover,
+	.nav-item.open .nav-link,
+	.nav-item.open .nav-link:focus,
+	.nav-item.open .nav-link:hover {
+	  color: $primary;
+	}
+  }
+  .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+	border-radius: 0 5rem 0 5rem;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+  }
+  .pagination {
+	a:hover {
+	  text-decoration: none;
+	}
+  }
+  
+  // Indicators
+  
+  .badge {
+	&.bg-light {
+	  color: $dark;
+	}
+  }
+  
+  .alert {
+	color: $white;
+	border: none;
+  
+	a,
+	.alert-link {
+	  color: $white;
+	  text-decoration: underline;
+	}
+  
+	@each $color, $value in $theme-colors {
+	  &-#{$color} {
+		@if $enable-gradients {
+		  background: $value linear-gradient(180deg, mix($body-bg, $value, 15%), $value) repeat-x;
+		} @else {
+		  background-color: $value;
+		}
+	  }
+	}
+  
+	&-light {
+	  &,
+	  a,
+	  .alert-link {
+		color: $body-color;
+	  }
+	}
+  }
+  
+  // Containers
+  
+  .modal,
+  .toast,
+  .offcanvas {
+	.btn-close {
+	  background-image: escape-svg(url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$black}'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>"));
+	}
+  }
+
+  .help-btn {
+	&:focus,
+	&:hover{
+		background-color: var(--bs-info-text-emphasis) !important;
+		color: var(--bs-dark) !important;
+		box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+	}
+  }
+  body svg {
+	fill: currentColor !important;
+  }
+  
+  #listcolor {
+	& .item {
+	  width: 4rem;
+	  height: 4rem;
+	  flex: 1 1 auto;
+	  transition: all .2s ease-in-out;
+	  transform: scale(1);
+	  border-radius: 0;
+	  display: flex;
+	  align-items: center;
+	  font-size: 0.75rem;
+	  justify-content: center;
+	  cursor: pointer;
+	  text-transform: uppercase;
+	  
+	  &:hover {
+		transform: scale(1.2);
+	  }
+
+	  &:active {
+		transform: scale(1);
+	  }
+
+	  &.active {
+		border-radius: 50%;
+	  }
+	}
+  }
+  #viewcolors{
+	width: 100%;
+	height: 2.5rem;
+	background: #000;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	border-radius: 0 5rem 0 5rem;
+	margin-top: 0.5rem;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+	padding: 0.35rem 1rem;
+	text-transform: uppercase;
+	position: relative;
+	cursor: pointer;
+
+	&::before{
+		border-radius: 0 5rem 0 5rem;
+	}
+  }
+  #point {
+	position: absolute;
+	width: 1rem;
+	height: 1rem;
+	background: transparent;
+	border: 1px solid #000;
+	border-radius: 50%;
+	top: 46%;
+	left: 46%;
+  }
+  .gama-item {
+	height: 4rem;
+	text-align: center;
+	font-size: 0.7rem;
+	padding: 0.35rem;
+	width: calc(100% / 9);
+	flex: 1 0 auto;
+	font-family: var(--bs-font-monospace);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	transition: all 0.2s ease-in-out;
+	text-transform: uppercase;
+	cursor: pointer;
+	position: relative;
+
+	&.active {
+	  border-radius: 50%;
+	  box-shadow: 0 0.5rem 1rem rgba(85, 85, 85, 0.15) !important;
+	  margin-left: 0.2rem;
+	  margin-right: 0.2rem;
+	  &::before {
+		border-radius: 50%;
+	  }
+	}
+  }
+  #wheel-pikers {
+	& .form-range {
+	  width: 91%;
+	  transform-origin: right center;
+	  transform: rotate(270deg);
+	  transform-box: border-box;
+	  position: absolute;
+	  top: -14px;
+	  right: 0rem;
+	}
+	& .spanDark,
+	& .spanLigth{
+	  position: absolute;
+	}
+	& .spanDark{
+	  top: auto;
+	  bottom: 0rem;
+	  left: auto;
+	  right: -11px;
+	}
+	& .spanLigth {
+	  right: -11px;
+	  top: -2rem;
+	  left: auto;
+	  bottom: auto;
+	}
+	& img {
+	  max-width: 100%;
+	  width: 100%;
+	  height: auto;
+	}
+  }
+  #controlwcp{
+	& #hue{
+		outline: none;
+		box-shadow: none;
+		border-width: 0;
+	}
+	& #sat {
+		outline: none;
+		box-shadow: none;
+		border-width: 0;
+	}
+	& .value{
+		min-width: 3.5rem;
+		text-align: end;
+		display: block;
+	}
+  }
+
+#previewcolor {
+	position: relative;
+	width: 19rem;
+	height: 19rem;
+	background-color: #0005;
+	border-radius: 0rem 10rem 10rem 10rem;
+	margin: auto;
+	
+	&::after {
+		content: "";
+		border-radius: 25% 50% 50% 50%;
+		width: 7rem;
+		height: 6rem;
+		position: absolute;
+		top: 54%;
+		background: rgba(255 255 255 / 15%);
+		left: auto;
+		right: 20%;
+		bottom: auto;
+
+	}
+}
+
+#previewcolor,
+.gama-item,
+#viewcolors,
+#controlwcp  .input-group {
+	&::before{
+		background: linear-gradient(45deg, rgba(255,255,255,0.2) 25%,transparent 25%,transparent 75%,rgba(255,255,255,0.2) 75%,rgba(255,255,255,0.2)),linear-gradient(45deg, rgba(255,255,255,0.2) 25%,transparent 25%,transparent 75%,rgba(255,255,255,0.2) 75%,rgba(255,255,255,0.2));
+		background-size: 20px 20px;
+		background-position: 0px 0px, 10px 10px;
+		content: "";
+		z-index: -2;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}	
+}
+#addcolors{ border-style: dashed; }
+.control-input{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
+	& div {
+		min-width: 10%;
+		&.text-end {
+			cursor: pointer;
+		}
+	}
+}
+  @media (width >= 48rem ) {
+		#head {
+			width: auto;
+			height: 100vh;
+		}
+		#viewcolors {
+			height: 13rem;
+		}
+  }
+  @media (width > 62rem) {
+	#viewcolors {
+		height: 7rem;
+		font-size: 0.7rem;
+		padding-left: 5rem;
+	}
+  }
+  @media (width < 48rem ) {
+		#head {
+			width: 100vw;
+			height: auto;
+		}
+		#viewcolors{
+			height: 9rem;
+			padding-left: 4rem;
+			font-size: 0.8rem;
+		}
+		#gama {
+			flex-wrap: wrap;
+			& .gama-item{
+				width: calc(100% / 3);
+			}
+		}
+  }
