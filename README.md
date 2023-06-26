@@ -10,7 +10,7 @@ Helper Css ofrece una forma simple de calcular las medidas CSS en ella podemos c
 
 ![calculate](screens/calculadora.png "Helpers CSS")
 
-Su uso es muy sencillo solo debemos establecer una base de calculo por defecto para `rem` o `em` es `16`, luego el número que deseamos calcular y por ultimo me dida del numero el resultado lo veran el la siguiente campo, tambien podemos especicar la cantidad de decimales que deamos optener, por defecto su valor es `3`. 
+Su uso es muy sencillo solo debemos establecer una base de calculo por defecto para `rem` o `em` es `16`, luego el número que deseamos calcular y por ultimo me dida del numero el resultado lo veran el la siguiente campo, tambien podemos especicar la cantidad de decimales que deamos optener, por defecto su valor es `3`.
 
 ### Lista de Unidades Soportadas
 
@@ -37,20 +37,25 @@ Helpers Css hace uso de las utilidades de color de [FascinoJs](https://github.co
 ### Formatos de Colores
 
 El soporte de colores generados por esta herramientas son:
+
 - HSL( Hue, Saturación (`Saturate`), Iluminación(`Light`) ) y HSLA(HSL con canal Alfa)
 - HWB( Hue, Blanco(`White`), Negro(`black`) )
 - RGB (Red, Green, Blue) y (RGB con canal Alfa)
 - HEXADECIMAL y con canal Alfa
 
 ## Origen
+
 Helpers Css fue desarrollador orignalmente en Python puede ver su repositorio [Aqui](https://github.com/REP98/calCss) se migro a este desarrollo con la intencion de mejorar y ofrecer un ambiente mas simple como WebApp Hibrida para una mejor compativilidad con los diversos Sistemas Operativos.
 
 ## Sistemas Operativos
+
 Helpers CSS es soportado por los siguientes sistemas operativos.
+
 - Android apartir de su versión 8
 - Window 32bit y 64bit
 - Linux 64bit
-- Browser desde [GitHub](rep98.github.io/helperscssmos)
+- Browser desde [GitHub](https://rep98.github.io/helperscssmos)
 
 ## Legal
-Este proyecto esta bajo la licensia [LICENSE](MIT).
+
+Este proyecto esta bajo la licensia [MIT](LICENSE).
