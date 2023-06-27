@@ -26,8 +26,8 @@
     "package:linux": "cd electron && env PKM=electron electron-forge package --arch x64 --platform=linux",
     "package:win64": "cd electron && env PKM=electron electron-forge package --arch x64 --platform=win32",
     "package:win32": "cd electron && env PKM=electron electron-forge package --arch ia32 --platform=win32",
-    "make:linux": "cd electron && env PKM=electron electron-forge make --arch x64 --platform=linux",
-    "make:win64": "cd electron && env PKM=electron electron-forge make --arch x64 --platform=win32",
+    "make:linux": "cd electron && env PKM=electron electron-forge make --target @electron-forge/maker-snap --arch x64 --platform=linux",
+    "make:win64": "cd electron && env PKM=electron electron-forge make --target @electron-forge/maker-appx --arch x64 --platform=win32",
     "make:win32": "cd electron && env PKM=electron electron-forge make --arch ia32 --platform=win32",
     "android": "cd android && env PKM=android androidjs build --release"
   },
